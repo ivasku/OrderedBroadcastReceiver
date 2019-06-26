@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tms.broadcastrec">
 
+    <permission android:name="com.tms.broadcastrec.CUSTOM_PERMISSION"/>
+    
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,6 +22,7 @@
         </activity>
 
         <receiver android:name=".OrderedReceiver2"
+            android:permission="android.permission.INTERNET"
             android:exported="true">
             <intent-filter
                 android:priority="2">
@@ -26,6 +31,7 @@
         </receiver>
 
         <receiver android:name=".OrderedReceiver3"
+            android:permission="com.tms.broadcastrec.CUSTOM_PERMISSION"
             android:exported="true">
             <intent-filter
                 android:priority="3">

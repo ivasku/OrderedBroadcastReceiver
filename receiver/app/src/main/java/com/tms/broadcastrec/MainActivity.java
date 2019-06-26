@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         IntentFilter filter = new IntentFilter("com.tms.EXAMPLE_ACTION");
         filter.setPriority(1);
-        registerReceiver(orderedReceiver1, filter);
+        registerReceiver(orderedReceiver1, filter, Manifest.permission.CUSTOM_PERMISSION , null);
     }
 
 

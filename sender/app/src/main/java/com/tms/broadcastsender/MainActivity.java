@@ -1,5 +1,6 @@
 package com.tms.broadcastsender;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras = new Bundle();
         extras.putString("stringExtra" , "Start");
 
-        sendOrderedBroadcast(intent, null, new ExampleBroadcastReceiver2(), null, 0, "Start" , extras );
+        sendOrderedBroadcast(intent, Manifest.permission.WAKE_LOCK, new ExampleBroadcastReceiver2(), null, 0, "Start" , extras );
     }
 }
 
